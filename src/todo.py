@@ -6,6 +6,7 @@ Usage:
     todo add "task"    - Add a new task
     todo done <num>    - Mark task as done (1-indexed)
     todo del <num>     - Delete task (1-indexed)
+    todo setup <path>  - Set up the todo file location (first time setup)
 """
 
 import sys
@@ -14,6 +15,8 @@ from todo_storage import (
     delete_todo,
     list_todos,
     mark_done,
+    set_todo_file,
+    get_todo_file,
 )
 
 def print_usage():
@@ -73,6 +76,17 @@ def main():
             print(f"Deleted task {idx + 1}.")
         else:
             print(f"Error: Could not delete task {idx + 1} (out of range).")
+
+    elif command == "setup":
+        if len(sys.argv) < 3:
+            current_file = get_todo_file()
+            print(f"Current todo file: {current_file}")
+            print('Usage: todo setup "/path/to/your/Todos.md"')
+            print("Example: todo setup \"/home/gift/obsidian-vault/Todos.md\"")
+            return
+        path = " ".join(sys.argv[2:])
+        set_todo_file(path)
+        print(f"Todo file location set to: {path}")
 
     else:
         print(f"Error: Unknown command '{command}'.")
