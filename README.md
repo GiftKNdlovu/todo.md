@@ -33,11 +33,11 @@ python -m src.todo list
 ## Usage
 
 ```bash
+todo setup "/path/to/Todos.md"  # change the target file (once)
 todo list                    # show all tasks
 todo add "Read case law"     # add a task
 todo done 1                  # mark task 1 complete
 todo del 2                   # delete task 2
-todo setup "/path/to/Todos.md"  # change the target file (once)
 ```
 
 ## File format
