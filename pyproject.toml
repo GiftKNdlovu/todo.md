@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "todo-md"
+version = "1.0.0"
+description = "Minimal CLI for managing tasks in a Markdown file (Obsidian-compatible)"
+readme = "README.md"
+authors = [{name = "GiftKNdlovu", email = "hopthegamer0@gmail.com"}]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+]
+requires-python = ">=3.8"
+keywords = ["todo", "cli", "markdown", "obsidian", "tasks"]
+
+[project.scripts]
+todo = "src.todo:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
