@@ -1,4 +1,4 @@
-# todo
+# todo.md
 
 A minimal CLI for managing tasks in a Markdown file. Built for Obsidian vaults, works with any `.md` file using `- [ ]` / `- [x]` syntax.
 
